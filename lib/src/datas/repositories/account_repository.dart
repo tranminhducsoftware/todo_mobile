@@ -2,11 +2,13 @@ import 'package:get_it/get_it.dart';
 
 import 'package:todo_mobile/src/datas/models/auth/authenticate_model.dart';
 import 'package:todo_mobile/src/datas/models/auth/authenticate_result_model.dart';
+import 'package:todo_mobile/src/datas/models/auth/login_informations.dart';
 import 'package:todo_mobile/src/datas/providers/interfaces/access_token_provider.dart';
 import 'package:todo_mobile/src/datas/providers/interfaces/application_context_provider.dart';
 import 'package:todo_mobile/src/datas/providers/interfaces/data_storage_provider.dart';
 import 'package:todo_mobile/src/datas/providers/interfaces/permission_manager_provider.dart';
 import 'package:todo_mobile/src/datas/providers/interfaces/session_provider.dart';
+import 'package:todo_mobile/src/screens/dashboard/bloc/dashboard_bloc/dashboard_bloc.dart';
 
 import 'interfaces/account_repository.dart';
 
@@ -48,8 +50,8 @@ class AccountRepository implements IAccountRepository {
     var loginInfo = await sessionAppProvider!.getCurrentLoginInformations();
     await dataStorageProvider!.storeLoginInfomation(loginInfo);
 
-    var lstPermission = await sessionAppProvider!.getUserPermissionsForEdit(authenticateResultModel!.userId ?? 0);
-    await dataStorageProvider!.storeUserPermissionInfo(lstPermission.toList());
+    // var lstPermission = await sessionAppProvider!.getUserPermissionsForEdit(authenticateResultModel!.userId ?? 0);
+    // await dataStorageProvider!.storeUserPermissionInfo(lstPermission.toList());
   }
 
   @override
@@ -62,5 +64,11 @@ class AccountRepository implements IAccountRepository {
   @override
   Future<bool> isUserLoggedIn() async {
     return await dataStorageProvider!.retrieveAuthenticateResult() != null;
+  }
+
+  @override
+  Future<LoginInformations?> getInformationUser() async{
+    var output =  await dataStorageProvider?.retrieveLoginInfo();
+    return output;
   }
 }

@@ -21,8 +21,8 @@ class BarChartSample1 extends StatefulWidget {
 }
 
 class BarChartSample1State extends State<BarChartSample1> {
-  final Color barBackgroundColor = const Color(0xFFA06AFA);
-  static const Color mainColor = const Color(0xFFFAA3FF);
+  final Color barBackgroundColor = const Color(0xFFFFEBEE);
+  static const Color mainColor = const Color(0xFFFFAB91);
   final Duration animDuration = const Duration(milliseconds: 250);
 
   int touchedIndex = -1;
@@ -45,7 +45,7 @@ class BarChartSample1State extends State<BarChartSample1> {
                 children: [
                   Text("Completed in the last 7 Days",
                       style: GoogleFonts.lato(
-                          color: HexColor.fromHex("616575"), fontSize: 13)),
+                          color: HexColor.fromHex("#3f4254"), fontSize: 13)),
                   IconButton(
                     icon: Icon(
                       isPlaying ? Icons.pause : Icons.play_arrow,

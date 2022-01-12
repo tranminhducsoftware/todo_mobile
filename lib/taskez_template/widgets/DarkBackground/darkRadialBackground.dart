@@ -7,19 +7,19 @@ class DarkRadialBackground extends StatelessWidget {
   final Color color;
   var list = List.generate(
     3,
-    (index) => HexColor.fromHex("1D192D"),
+    (index) => HexColor.fromHex("#074d80"),
   );
-  DarkRadialBackground({required this.color, required this.position});
+  DarkRadialBackground({Key? key, required this.color, required this.position}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Center(
         child: Container(
             decoration: BoxDecoration(
       gradient: RadialGradient(
-        colors: [...list, this.color],
+        colors: [...list, color],
         center: (position == "bottomRight")
-            ? Alignment(1.0, 1.0)
-            : Alignment(-1.0, -1.0),
+            ? const Alignment(1.0, 1.0)
+            : const Alignment(-1.0, -1.0),
       ),
     )));
   }

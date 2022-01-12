@@ -26,11 +26,11 @@ class _TimelineState extends State<Timeline> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: HexColor.fromHex("#181a1f"),
+        backgroundColor: HexColor.fromHex("#074d80"),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         body: Stack(children: [
           DarkRadialBackground(
-            color: HexColor.fromHex("#181a1f"),
+            color: HexColor.fromHex("#074d80"),
             position: "topLeft",
           ),
           ValueListenableBuilder(
@@ -44,13 +44,13 @@ class _TimelineState extends State<Timeline> {
         bottomNavigationBar: Container(
             width: double.infinity,
             height: 90,
-            padding: EdgeInsets.only(top: 10, right: 30, left: 30),
+            padding: const EdgeInsets.only(top: 10, right: 30, left: 30),
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(20),
                   topRight: Radius.circular(20),
                 ),
-                color: HexColor.fromHex("#181a1f").withOpacity(0.8)),
+                color: HexColor.fromHex("#074d80").withOpacity(0.8)),
             child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -59,25 +59,25 @@ class _TimelineState extends State<Timeline> {
                       itemIndex: 0,
                       notifier: bottomNavigatorTrigger,
                       icon: Icons.widgets),
-                  Spacer(),
+                  const Spacer(),
                   BottomNavigationItem(
                       itemIndex: 1,
                       notifier: bottomNavigatorTrigger,
                       icon: FeatherIcons.clipboard),
-                  Spacer(),
+                  const Spacer(),
                   DashboardAddButton(
                     iconTapped: (() {
-                      showAppBottomSheet(Container(
+                      showAppBottomSheet(SizedBox(
                           height: Utils.screenHeight * 0.8,
-                          child: DashboardAddBottomSheet()));
+                          child: const DashboardAddBottomSheet()));
                     }),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   BottomNavigationItem(
                       itemIndex: 2,
                       notifier: bottomNavigatorTrigger,
                       icon: FeatherIcons.bell),
-                  Spacer(),
+                  const Spacer(),
                   BottomNavigationItem(
                       itemIndex: 3,
                       notifier: bottomNavigatorTrigger,

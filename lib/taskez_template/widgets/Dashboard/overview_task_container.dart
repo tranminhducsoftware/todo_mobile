@@ -41,7 +41,7 @@ class OverviewTaskContainer extends StatelessWidget {
                       style: GoogleFonts.lato(
                           color: Colors.white,
                           fontWeight: FontWeight.w600,
-                          fontSize: 20))
+                          fontSize: 18))
                 ],
               ),
               Row(children: [

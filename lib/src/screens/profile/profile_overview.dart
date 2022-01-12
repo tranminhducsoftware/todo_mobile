@@ -3,7 +3,8 @@ import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:todo_mobile/src/datas/repositories/interfaces/account_repository.dart';
-import 'package:todo_mobile/src/screens/auth/login/login.dart';
+import 'package:todo_mobile/src/screens/auth/login/srceens/login.dart';
+import 'package:todo_mobile/src/screens/splash/splash_screen.dart';
 import 'package:todo_mobile/taskez_template/Values/values.dart';
 import 'package:todo_mobile/taskez_template/widgets/Buttons/primary_progress_button.dart';
 import 'package:todo_mobile/taskez_template/widgets/Buttons/progress_card_close_button.dart';
@@ -14,7 +15,6 @@ import 'package:todo_mobile/taskez_template/widgets/container_label.dart';
 import 'package:todo_mobile/taskez_template/widgets/dummy/profile_dummy.dart';
 
 import 'my_profile.dart';
-import 'my_team.dart';
 import 'profile_notification_settings.dart';
 
 class ProfileOverview extends StatelessWidget {
@@ -28,7 +28,7 @@ class ProfileOverview extends StatelessWidget {
     return Scaffold(
         body: Stack(children: [
       DarkRadialBackground(
-        color: HexColor.fromHex("#181a1f"),
+        color: HexColor.fromHex("#074d80"),
         position: "topLeft",
       ),
       Padding(
@@ -134,7 +134,7 @@ class ProfileOverview extends StatelessWidget {
                   badgeColor: "FDA5FF",
                   callback: () async {
                     await accountRepository.logout();
-                    Get.to(() => const Login());
+                    Get.to(() =>  SplashScreen());
                   },
                 ),
               ),

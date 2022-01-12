@@ -42,7 +42,9 @@ TenantLoginInfo _$TenantLoginInfoFromJson(Map<String, dynamic> json) =>
           : DateTime.parse(json['creationTime'] as String),
       creationTimeString: json['creationTimeString'] as String?,
       customCssId: json['customCssId'] as String?,
-      edition: json['edition'],
+      edition: json['edition'] == null
+          ? null
+          : EditionInfo.fromJson(json['edition'] as Map<String, dynamic>),
       isInTrialPeriod: json['isInTrialPeriod'] as bool?,
       loginBackgroundFileType: json['loginBackgroundFileType'] as String?,
       loginBackgroundId: json['loginBackgroundId'] as String?,

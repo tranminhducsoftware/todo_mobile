@@ -32,7 +32,7 @@ class ProjectCardHorizontal extends StatelessWidget {
       },
       child: Container(
           padding: EdgeInsets.all(20),
-          decoration: BoxDecoration(color: HexColor.fromHex("20222A"), borderRadius: BorderRadius.circular(20)),
+          decoration: BoxDecoration(color: HexColor.fromHex("#3699ff"), borderRadius: BorderRadius.circular(20)),
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,7 +45,7 @@ class ProjectCardHorizontal extends StatelessWidget {
                       Text(projectName,
                           style: GoogleFonts.lato(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w600)),
                       SizedBox(height: 5),
-                      Text(category, style: GoogleFonts.lato(color: HexColor.fromHex("626677"))),
+                      Text(category, style: GoogleFonts.lato(color:  const Color(0xFFFFEBEE))),
                     ])
                   ]),
                   Container(

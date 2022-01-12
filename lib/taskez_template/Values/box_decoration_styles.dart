@@ -8,8 +8,8 @@ class BoxDecorationStyles {
         colors: [
           HexColor.fromHex("625B8B"),
           Color.fromRGBO(98, 99, 102, 1),
-          HexColor.fromHex("#181a1f"),
-          HexColor.fromHex("#181a1f")
+          HexColor.fromHex("#074d80"),
+          HexColor.fromHex("#074d80")
         ]),
     borderRadius: BorderRadius.only(
         topLeft: Radius.circular(20), topRight: Radius.circular(20)),

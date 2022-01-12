@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:todo_mobile/src/screens/dashboard/dashboard.dart';
-import 'package:todo_mobile/src/screens/dashboard/notifications.dart';
-import 'package:todo_mobile/src/screens/dashboard/projects.dart';
-import 'package:todo_mobile/src/screens/dashboard/search_screen.dart';
+import 'package:todo_mobile/src/screens/dashboard/screens/dashboard.dart';
+import 'package:todo_mobile/src/screens/dashboard/screens/notifications.dart';
+import 'package:todo_mobile/src/screens/dashboard/screens/projects.dart';
+import 'package:todo_mobile/src/screens/dashboard/screens/search_screen.dart';
 import 'package:todo_mobile/taskez_template/Data/data_model.dart';
 
 import 'package:todo_mobile/taskez_template/Values/values.dart';

@@ -19,7 +19,7 @@ abstract class ApiPath {
   static const String getFarmerForEdit = "api/services/app/Farmer/GetFarmerForEdit";
 
   // mapSheet
-  static const String mapSheetGetAll = "api/services/app/MapSheet/GetAll";
+  static const String mapSheetGetAll = "api/services/app/Dashboard/GetAggregateData";
   static const String getMapSheetForEdit = "api/services/app/MapSheet/GetMapSheetForEdit";
 
   // abp core

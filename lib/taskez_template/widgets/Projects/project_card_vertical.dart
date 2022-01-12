@@ -35,7 +35,7 @@ class ProjectCardVertical extends StatelessWidget {
 
           //margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           padding: EdgeInsets.all(20),
-          decoration: BoxDecoration(color: HexColor.fromHex("20222A"), borderRadius: BorderRadius.circular(20)),
+          decoration: BoxDecoration(color: HexColor.fromHex("#3699ff"), borderRadius: BorderRadius.circular(20)),
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             ColouredProjectBadge(color: color, category: category),
             AppSpaces.verticalSpace20,

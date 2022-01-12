@@ -68,7 +68,7 @@ class PlanCard extends StatelessWidget {
                               child: Container(
                                   width: 50,
                                   height: 50,
-                                  decoration: BoxDecoration(shape: BoxShape.circle, color: HexColor.fromHex("181a1f")),
+                                  decoration: BoxDecoration(shape: BoxShape.circle, color: HexColor.fromHex("074d80")),
                                   child: GreenDoneIcon()),
                             ),
                             Center(

@@ -1,4 +1,3 @@
-
 import 'package:todo_mobile/src/datas/models/auth/authenticate_result_model.dart';
 import 'package:todo_mobile/src/datas/models/auth/login_informations.dart';
 import 'package:todo_mobile/src/datas/models/multi_tenancy/tenant_information.dart';
@@ -17,7 +16,6 @@ abstract class IDataStorageProvider {
 
   Future<List<PermissionInfo>?> retrievePermissionInfo();
 
-
   void clearSessionPeristance();
 
   Future storeLoginInfomation(LoginInformations input);
@@ -25,5 +23,4 @@ abstract class IDataStorageProvider {
   Future storeTenantInfo(TenantInformation input);
 
   Future storeUserPermissionInfo(List<PermissionInfo> input);
-
 }

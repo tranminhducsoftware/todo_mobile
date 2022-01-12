@@ -26,7 +26,7 @@ class NewGroupScreen extends StatelessWidget {
     return Scaffold(
         body: Stack(children: [
       DarkRadialBackground(
-        color: HexColor.fromHex("#181a1f"),
+        color: HexColor.fromHex("#074d80"),
         position: "topLeft",
       ),
       Padding(
