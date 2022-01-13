@@ -9,13 +9,15 @@ class ProjectTaskCard extends StatelessWidget {
   final String backgroundColor;
   final String image;
   final String date;
+  final String? assignName;
   const ProjectTaskCard(
       {Key? key,
       required this.date,
       required this.activated,
       required this.header,
       required this.image,
-      required this.backgroundColor})
+      required this.backgroundColor,
+      this.assignName})
       : super(key: key);
 
   @override
@@ -33,7 +35,8 @@ class ProjectTaskCard extends StatelessWidget {
                         backgroundColor: backgroundColor,
                         notifier: _totalDueTrigger,
                         date: date,
-                        image: image),
+                        image: image,
+                    assignName: assignName,),
                     AppSpaces.verticalSpace10
                   ],
                 )
@@ -44,6 +47,7 @@ class ProjectTaskCard extends StatelessWidget {
                     notifier: _totalDueTrigger,
                     date: date,
                     image: image,
+                      assignName: assignName
                   ),
                   AppSpaces.verticalSpace10
                 ]);

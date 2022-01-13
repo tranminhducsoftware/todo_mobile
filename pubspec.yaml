@@ -53,6 +53,8 @@ dependencies:
   bloc: ^7.2.1
   flutter_bloc: ^7.1.0
   equatable: ^2.0.3
+  after_layout: ^1.1.0
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:

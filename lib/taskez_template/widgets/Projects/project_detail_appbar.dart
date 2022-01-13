@@ -24,29 +24,49 @@ class ProjectDetailAppBar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
-            children: [
-              ColouredProjectBadge(color: color, category: category),
-              AppSpaces.horizontalSpace20,
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text(projectName,
-                    style: GoogleFonts.lato(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w600)),
-                SizedBox(height: 5),
-                Text(category,
-                    style: GoogleFonts.lato(color: HexColor.fromHex("626677"))),
-              ])
-            ],
+          Expanded(
+            flex: 7,
+            child: Row(
+              children: [
+                Expanded(
+                    flex: 1,
+                    child:
+                        ColouredProjectBadge(color: color, category: category)),
+                AppSpaces.horizontalSpace10,
+                Expanded(
+                    flex: 4,
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(projectName,
+                              style: GoogleFonts.lato(
+                                  color: Colors.white,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w600)),
+                          const SizedBox(height: 5),
+                          Text(category,
+                              style: GoogleFonts.lato(
+                                  fontSize: 13,
+                                  color: HexColor.fromHex("#3699ff"))),
+                        ]))
+              ],
+            ),
           ),
-          Row(children: [
-            Icon(FeatherIcons.star, color: Colors.white, size: 30),
-            AppSpaces.horizontalSpace20,
-            InkWell(
-                onTap: iconTapped,
-                child: Icon(Icons.more_horiz, color: Colors.white, size: 30))
-          ])
+          Expanded(
+              flex: 1,
+              child: Row(children: [
+                // Expanded(
+                //     flex: 1,
+                //     child:
+                //         Icon(FeatherIcons.star, color: Colors.white, size: 30)),
+                // AppSpaces.horizontalSpace10,
+                Expanded(
+                    flex: 1,
+                    child: InkWell(
+                        onTap: iconTapped,
+                        child: Icon(Icons.more_horiz,
+                            color: Colors.white, size: 30)))
+              ]))
         ]);
   }
 }

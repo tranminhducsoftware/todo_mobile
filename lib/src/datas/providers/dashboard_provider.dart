@@ -8,10 +8,14 @@ import 'interfaces/dashboard_provider.dart';
 class DashboardProvider implements IDashboardProvider {
   @override
   Future<AggregateData> GetInfoAggregateData() async {
-    var httpClient = await HttpClientService().createClient();
-    var clientResponse = await httpClient.get(ApiPath.mapSheetGetAll);
-    var ajaxResponse = AjaxResponse<AggregateData>.fromJson(clientResponse.data,
-        (data) => AggregateData.fromJson((data as Map<String, dynamic>)));
-    return ajaxResponse.result!;
+    try{
+      var httpClient = await
+       HttpClientService().createClient();
+      var clientResponse = await httpClient.get(ApiPath.mapSheetGetAll);
+      var ajaxResponse = AjaxResponse<AggregateData>.fromJson(clientResponse.data, (data) => AggregateData.fromJson((data as Map<String, dynamic>)));
+      return ajaxResponse.result!;
+    }catch(e){
+      throw e;
+    }
   }
 }

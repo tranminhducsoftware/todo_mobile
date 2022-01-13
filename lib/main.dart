@@ -1,3 +1,4 @@
+import 'package:after_layout/after_layout.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -21,11 +22,19 @@ void main() async {
     systemNavigationBarIconBrightness: Brightness.light,
     statusBarIconBrightness: Brightness.light,
   ));
-  runApp(MyApp());
+  runApp(const MyApp());
+
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<StatefulWidget> createState() => _MyApp();
+}
+
+
+class _MyApp extends State<MyApp> with AfterLayoutMixin<MyApp>  {
 
   initInfo() async {
     // Khai báo
@@ -33,8 +42,7 @@ class MyApp extends StatelessWidget {
     var accessTokenProvider = getIt.get<IAccessTokenProvider>();
     var applicationContextProvider = getIt.get<IApplicationContextProvider>();
     var userConfigProvider = UserConfigurationProvider();
-    accessTokenProvider.authenticateResult =
-        await dataStorageProvider.retrieveAuthenticateResult();
+    accessTokenProvider.authenticateResult = await dataStorageProvider.retrieveAuthenticateResult();
     // Gán giá trị
     applicationContextProvider.load(
         await dataStorageProvider.retrieveTenantInfo(),
@@ -64,11 +72,9 @@ class MyApp extends StatelessWidget {
       ],
       title: 'Todo',
       theme: ThemeData(
-
         brightness: Brightness.light,
         appBarTheme: const AppBarTheme(
           systemOverlayStyle: SystemUiOverlayStyle.light,
-
         ),
       ),
       home: SplashScreen(),

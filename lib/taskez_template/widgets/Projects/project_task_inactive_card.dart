@@ -10,13 +10,15 @@ class ProjectTaskInActiveCard extends StatelessWidget {
   final ValueNotifier<bool> notifier;
   final String image;
   final String date;
+  final String? assignName;
   const ProjectTaskInActiveCard(
       {Key? key,
       required this.header,
       required this.notifier,
       required this.backgroundColor,
       required this.image,
-      required this.date})
+      required this.date,
+      this.assignName})
       : super(key: key);
 
   @override
@@ -48,8 +50,9 @@ class ProjectTaskInActiveCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(header,
-                        style: GoogleFonts.lato(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 18)),
-                    Text(date, style: GoogleFonts.lato(color: HexColor.fromHex("8ECA84")))
+                        style: GoogleFonts.lato(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 11)),
+                    Text(date, style: GoogleFonts.lato(color: HexColor.fromHex("8ECA84"),fontSize: 11)),
+                    Text(assignName ??"", style: GoogleFonts.lato(color: HexColor.fromHex("8ECA84"),fontSize: 11))
                   ])
             ]),
             ProfileDummy(

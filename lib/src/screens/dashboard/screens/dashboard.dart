@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:todo_mobile/src/screens/chat/chat_screen.dart';
 import 'package:todo_mobile/src/screens/dashboard/bloc/dashboard_bloc/dashboard_bloc.dart';
+import 'package:todo_mobile/src/screens/dashboard/bloc/overview_bloc/overview_bloc.dart';
 import 'package:todo_mobile/src/screens/profile/profile_overview.dart';
 import 'package:todo_mobile/taskez_template/BottomSheets/bottom_sheets.dart';
 import 'package:todo_mobile/taskez_template/Values/values.dart';
@@ -26,7 +27,6 @@ class Dashboard extends StatelessWidget {
   ValueNotifier<bool> _workingOnTrigger = ValueNotifier(false);
   ValueNotifier<int> _buttonTrigger = ValueNotifier(0);
 
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -41,7 +41,8 @@ class Dashboard extends StatelessWidget {
   BlocProvider<DashboardBloc> _buildBody(BuildContext context) {
     return BlocProvider(
       create: (context) => DashboardBloc(),
-      child: BlocBuilder<DashboardBloc, DashboardState>(builder: (context, state) {
+      child:
+          BlocBuilder<DashboardBloc, DashboardState>(builder: (context, state) {
         if (state is Initial) {
           BlocProvider.of<DashboardBloc>(context).add(
             LoadInformationUser(),
@@ -82,11 +83,11 @@ class Dashboard extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           PrimaryTabButton(
-                              buttonText: "Overview",
+                              buttonText: "Tổng quan",
                               itemIndex: 0,
                               notifier: _buttonTrigger),
                           PrimaryTabButton(
-                              buttonText: "Productivity",
+                              buttonText: "Thống kê",
                               itemIndex: 1,
                               notifier: _buttonTrigger)
                         ],
@@ -112,7 +113,7 @@ class Dashboard extends StatelessWidget {
                     valueListenable: _buttonTrigger,
                     builder: (BuildContext context, _, __) {
                       return _buttonTrigger.value == 0
-                          ? const DashboardOverview()
+                          ?  const OverviewOverview()
                           : const DashboardProductivity();
                     })
               ]);
@@ -123,4 +124,6 @@ class Dashboard extends StatelessWidget {
       }),
     );
   }
+
+
 }

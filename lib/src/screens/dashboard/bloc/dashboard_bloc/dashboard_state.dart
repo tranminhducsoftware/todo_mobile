@@ -13,8 +13,8 @@ class InformationUser extends DashboardState {
   InformationUser({this.loginInformations});
 }
 
-class AggregateDatas extends DashboardState {
-  final AggregateData aggregateData;
-
-  AggregateDatas({ required this.aggregateData});
-}
+// class AggregateDatas extends DashboardState {
+//   final AggregateData aggregateData;
+//
+//   AggregateDatas({ required this.aggregateData});
+// }
